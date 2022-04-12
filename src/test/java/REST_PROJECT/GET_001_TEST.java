@@ -24,7 +24,7 @@ import static org.hamcrest.Matchers.*;
 //                  Assert.assertEquals(StatusCode, 200);
            log().all();
 
-//    Test git remote connection
+//    Update GET API code
 
 
         }
