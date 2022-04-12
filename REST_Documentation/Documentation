@@ -1,0 +1,10 @@
+
+REST Assured API testing Beginner Tutorial | Part 2 - How to test GET POST PUT PATCH and DELETE
+https://www.youtube.com/watch?v=mkIliGAePBM&list=RDCMUCTt7pyY-o0eltq14glaG5dg&start_radio=1&rv=mkIliGAePBM&t=505
+
+--------------------------------------------------------------------------------------------------
+
+informational response (100 - 199)
+Successful response (200 - 299)
+Client errors ( 300 - 399)
+Server error (500 - 599)
