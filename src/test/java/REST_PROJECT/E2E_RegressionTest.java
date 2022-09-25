@@ -10,6 +10,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 
+
+// E2E Regression Testing Pack
 @Test
     public class E2E_RegressionTest {
 

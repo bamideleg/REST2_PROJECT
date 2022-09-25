@@ -8,3 +8,7 @@ informational response (100 - 199)
 Successful response (200 - 299)
 Client errors ( 300 - 399)
 Server error (500 - 599)
+
+Get: 200
+Post: 201
+Patch: 200

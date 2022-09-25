@@ -4,6 +4,7 @@ package REST_PROJECT;
 import io.restassured.http.ContentType;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.json.simple.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,11 +12,14 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class Test_POST {
 
     @Test
     public void test_POST1(){
+
+
 
  //Map is created to store the data
 
@@ -47,8 +51,9 @@ public class Test_POST {
                 body(request.toJSONString()).
         when().
                 post("https://reqres.in/api/users").
+
         then().statusCode(201).log().all();
+ //       body("data.name",equalTo("Teacher"));
+        Assert.assertEquals("name","Teacher");
     }
-
-
 }
