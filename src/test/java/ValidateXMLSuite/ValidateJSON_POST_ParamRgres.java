@@ -67,7 +67,7 @@ public class ValidateJSON_POST_ParamRgres {
 
            System.out.println(response.asString());
             System.out.println(response.prettyPrint());
-            Assert.assertEquals(response.statusCode(), 200);
+            Assert.assertEquals(response.statusCode(), 400);
             Assert.assertEquals(response.contentType(), "application/json; charset=utf-8");
 
         response.then().body("name", equalTo("morpheus"))
