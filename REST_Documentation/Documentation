@@ -8,3 +8,10 @@ informational response (100 - 199)
 Successful response (200 - 299)
 Client errors ( 300 - 399)
 Server error (500 - 599)
+<<<<<<< HEAD
+
+Get: 200
+Post: 201
+Patch: 200
+=======
+>>>>>>> 08424e294de53c3b3bd4d8add7125c3449543439

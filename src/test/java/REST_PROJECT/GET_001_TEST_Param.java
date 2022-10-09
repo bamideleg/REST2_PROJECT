@@ -16,11 +16,11 @@ public class GET_001_TEST_Param {
 
                     // Data validation point
                     param("email", "tobias.funke@reqres.in").
-                    get("https://reqres.in/api/users?page=2").
+                    get("https://reqres.in/api/https://reqres.inusers?page=2").
                     then().statusCode(200).
 //
                      body("data.id[2]", equalTo(9)).
-                    body("data.email[2]", equalTo("tobias.funke@reqres.in")).
+                     body("data.email[2]", equalTo("tobias.funke@reqres.in")).
                     //   To check multiple field that has first_name, see the code below
                             body("data.first_name", hasItems("Michael", "Lindsay", "Tobias", "Byron", "George", "Rachel")).
 
