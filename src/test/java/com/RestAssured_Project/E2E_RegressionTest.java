@@ -2,7 +2,7 @@
 
 
 
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import org.testng.annotations.Test;
 
@@ -18,10 +18,12 @@ import static org.hamcrest.Matchers.hasItems;
         public void test_GET_1 () {
 
             given().
-                    header("content-type", "application/json").
+                    header("content-type", "application/xml").
                     get("https://reqres.in/api/users?page=2").
 
-           then().statusCode(200).
+                    
+
+                    then().statusCode(200).
 //         To validate a specific response data, you need to specify the data and data position, see the response
 //         Note: Java count starts at 0,1,2 etc
 
@@ -30,7 +32,7 @@ import static org.hamcrest.Matchers.hasItems;
      //   To check multiple field that has first_name, see the code below
                     body("data.first_name", hasItems("Michael", "Lindsay", "Tobias", "Byron", "George", "Rachel")).
 
-//                  Assert.assertEquals(StatusCode, 200);
+ //                 Assert.assertEquals(StatusCode, 200);
            log().all();
 
 //    Update GET API code

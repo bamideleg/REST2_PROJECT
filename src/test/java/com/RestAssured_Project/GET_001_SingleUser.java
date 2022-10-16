@@ -2,7 +2,7 @@
 
 
 
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import org.testng.annotations.Test;
 
@@ -19,8 +19,8 @@ import static org.hamcrest.Matchers.hasItems;
                     get("https://reqres.in/api/users/2").
            then().statusCode(200).
 
-//                    body("data.email[2]",equalTo("janet.weaver@reqres.in")).
-                    body("data.email[2]",equalTo("n")).
+                    body("data.email",equalTo("janet.weaver@reqres.in")).
+
            log().all();
 
         }

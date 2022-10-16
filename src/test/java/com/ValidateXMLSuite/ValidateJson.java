@@ -1,4 +1,4 @@
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;
@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ValidateJson {
 
@@ -45,11 +46,18 @@ public class ValidateJson {
         Response response = given().header("accept", "application/xml").
                 when().get("v2/pet/findByStatus?status=pending");
 
-//                             or
+
         System.out.println(response.prettyPrint());
         Assert.assertEquals(response.statusCode(), 200);
 //        Assert.assertEquals(response.contentType(), "application/json");
         Assert.assertEquals(response.contentType(), "application/xml");
+
+        response.then().body("category.id", equalTo(0))
+                .body("category.name", equalTo("PetCat"))
+                .body("name", equalTo("Cat"))
+                .body("tags[0].id", equalTo(0))
+                .body("tags[0].name", equalTo("tag1"))
+                .body("status", equalTo("available"));
 
     }
 }

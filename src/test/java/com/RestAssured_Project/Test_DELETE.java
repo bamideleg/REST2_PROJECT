@@ -1,4 +1,4 @@
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import org.testng.annotations.Test;
 

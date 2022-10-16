@@ -2,7 +2,7 @@
 
 
 
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -22,10 +22,13 @@ import static org.hamcrest.Matchers.*;
 //         Note: Java count starts at 0,1,2 etc
                     body("data.id[2]", equalTo(9)).
                     body("data.email[2]",equalTo("tobias.funke@reqres.in")).
+
      //   To check multiple field that has first_name, see the code below
                     body("data.first_name", hasItems("Michael", "Lindsay", "Tobias", "Byron", "George", "Rachel")).
 
-//                  Assert.assertEquals(StatusCode, 200);
+ //                   body("data.id[2]", equalTo(8)).
+ //                   body("data.email[2]",equalTo("lindsay.ferguson@reqres.in")).
+
            log().all();
 
 //    Test git remote connection

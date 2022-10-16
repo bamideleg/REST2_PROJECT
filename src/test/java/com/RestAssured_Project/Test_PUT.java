@@ -1,4 +1,4 @@
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import io.restassured.http.ContentType;
 import org.json.simple.JSONObject;

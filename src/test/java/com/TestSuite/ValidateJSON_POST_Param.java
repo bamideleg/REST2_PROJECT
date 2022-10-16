@@ -25,7 +25,7 @@ public class ValidateJSON_POST_Param {
     }
 
     @Test
-    public void testAPI_GET_All_Users () {
+    public void TC01_testAPI_GET_All_Users () {
 
 
         Response response = given().header("accept"," application/json").
@@ -40,7 +40,7 @@ public class ValidateJSON_POST_Param {
     }
 
     @Test
-    public void testAPI_GET_Sngle_User () {
+    public void TC02_testAPI_GET_Sngle_User () {
 
 
         Response response = given().header("accept"," application/json").
@@ -55,12 +55,15 @@ public class ValidateJSON_POST_Param {
     }
 
     @Test
-    public void postPetsDataValidation(){
+    public void TC03_postPetsDataValidation(){
 
         long acctid;
 
-              String json = "\"name\": \"morpheus\"," +
-                      "    \"job\": \"leader\"";
+              String json = "{\n" +
+                      "    \"name\": \"morpheus\",\n" +
+                      "    \"job\": \"leader\"\n" +
+                      "}";
+
               System.out.println(json);
 
            Response response = given().header("accept"," application/json").header("Content-Type", "application/json").body("json").
@@ -70,27 +73,24 @@ public class ValidateJSON_POST_Param {
 
            System.out.println(response.asString());
             System.out.println(response.prettyPrint());
-            Assert.assertEquals(response.statusCode(), 200);
+            Assert.assertEquals(response.statusCode(), 201);
             Assert.assertEquals(response.contentType(), "application/json");
 
-        response.then().body("id", equalTo(0))
-                .body("email", equalTo("george.bluth@reqres.in"))
-                .body("name", equalTo("George"));
-//                .body("tags[0].id", equalTo(0))
+          response.then().body("data.first_name", equalTo("morpheus More2"))
+                .body("data.last_name", equalTo("George"));
 
-
-
-
-//        long petid = response.path("id");
-           acctid = response.path("id");
+           acctid = response.path("data.id");
            System.out.println("acctid");
     }
 
-    @Test(dependsOnMethods = "postPetsDataValidation")
-    public void putPets() {
+ //   @Test(dependsOnMethods = "postPetsDataValidation")
+    @Test
+    public void TC04_putPets() {
 
-        String json = " \"email\": \"eve.holt@reqres.in\",\n" +
-                "    \"password\": \"pistol\"";
+        String json = "{\n" +
+                "    \"name\": \"morpheus\",\n" +
+                "    \"job\": \"leader\"\n" +
+                "}";
 
         System.out.println(json);
 
@@ -105,7 +105,7 @@ public class ValidateJSON_POST_Param {
     }
 
     @Test (dependsOnMethods = "putPets")
-    public void delete() {
+    public void TC05_delete() {
         Response response = given().header("accept","application/json")
                 .when().delete("v2/pet/petid");
         System.out.println(response.asPrettyString());
@@ -114,7 +114,7 @@ public class ValidateJSON_POST_Param {
 
     }
     @Test (dependsOnMethods = "postPetsDataValidation")
-    public void postUpdate(){
+    public void TC06_postUpdate(){
         Response response = given().header("accept","application/json").header("Content-Type", "application/x-www-form-urlencoded")
                 .formParam("name","Cat").formParam("status", "Sold")
                 .when().post("v2/pet/9223372036854776000");

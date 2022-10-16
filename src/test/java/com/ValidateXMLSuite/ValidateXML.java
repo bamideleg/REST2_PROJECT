@@ -1,4 +1,4 @@
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;

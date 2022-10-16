@@ -1,8 +1,7 @@
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
@@ -20,7 +19,7 @@ public class GET_001_TEST_Param {
                     then().statusCode(200).
 //
                      body("data.id[2]", equalTo(9)).
-                     body("data.email[2]", equalTo("tobias.funke@reqres.in")).
+//                     body("data.email[2]", equalTo("tobias.funke@reqres.in")).
                     //   To check multiple field that has first_name, see the code below
                             body("data.first_name", hasItems("Michael", "Lindsay", "Tobias", "Byron", "George", "Rachel")).
 
@@ -28,5 +27,7 @@ public class GET_001_TEST_Param {
         log().all();
 
             }
+
+
 
 }

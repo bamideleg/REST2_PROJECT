@@ -1,4 +1,5 @@
-
+Design Model 1
+-----------------------
 REST Assured API testing Beginner Tutorial | Part 2 - How to test GET POST PUT PATCH and DELETE
 https://www.youtube.com/watch?v=mkIliGAePBM&list=RDCMUCTt7pyY-o0eltq14glaG5dg&start_radio=1&rv=mkIliGAePBM&t=505
 
@@ -15,3 +16,16 @@ Post: 201
 Patch: 200
 =======
 >>>>>>> 08424e294de53c3b3bd4d8add7125c3449543439
+
+
+----------------------------------------------------------------------------------------------------
+Design Model 2
+----------------------
+// https://www.youtube.com/watch?v=Ls48Yi8-2Ew
+
+// RestAssured | How to upload file using API
+//https://www.youtube.com/watch?v=z2m-YX4gKlo
+
+
+
+

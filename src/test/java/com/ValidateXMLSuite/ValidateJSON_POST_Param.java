@@ -3,7 +3,7 @@
 // RestAssured | How to upload file using API
 //https://www.youtube.com/watch?v=z2m-YX4gKlo
 
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;

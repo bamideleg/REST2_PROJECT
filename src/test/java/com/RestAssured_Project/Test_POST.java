@@ -1,5 +1,5 @@
 
-package REST_PROJECT;
+package com.RestAssured_Project;
 
 import io.restassured.http.ContentType;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;

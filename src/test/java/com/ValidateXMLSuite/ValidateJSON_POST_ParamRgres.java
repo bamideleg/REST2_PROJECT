@@ -1,4 +1,4 @@
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;
@@ -56,7 +56,7 @@ public class ValidateJSON_POST_ParamRgres {
 
               String json = "{\n" +
                       "    \"name\": \"morpheus\",\n" +
-                      "    \"job\": \"leader\"\n" +
+                      "    \"job\": \"QA leader\"\n" +
                       "}";
 //              System.out.println(json);
 
@@ -68,10 +68,10 @@ public class ValidateJSON_POST_ParamRgres {
            System.out.println(response.asString());
             System.out.println(response.prettyPrint());
             Assert.assertEquals(response.statusCode(), 400);
-            Assert.assertEquals(response.contentType(), "application/json; charset=utf-8");
+            Assert.assertEquals(response.contentType(), "text/html; charset=utf-8");
 
-        response.then().body("name", equalTo("morpheus"))
-                .body("job", equalTo("leader"));
+        response.then().body("data.name", equalTo("morpheus"))
+                .body("data.job", equalTo("leader"));
 
     }
 }

@@ -1,4 +1,4 @@
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;
@@ -109,6 +109,7 @@ public class ValidateJSON_POST_E2E {
     public void putPets(){
 
          String json = "'{\n" +
+ //                "  \"id\": petid,\n" +
                  "  \"id\": 9223372036854036000,\n" +
                  "  \"category\": {\n" +
                  "    \"id\": 0,\n" +
@@ -142,7 +143,8 @@ public class ValidateJSON_POST_E2E {
     public void patchPets(){
 
         String json = "'{\n" +
-                "  \"id\": 9223372036854776000,\n" +
+//                "  \"id\": 9223372036854776000,\n" +
+                "  \"id\": petid,\n" +
                 "  \"category\": {\n" +
                 "    \"id\": 0,\n" +
                 "    \"name\": \"string\"\n" +

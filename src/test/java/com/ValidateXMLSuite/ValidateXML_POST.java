@@ -1,4 +1,4 @@
-package ValidateXMLSuite;
+package com.ValidateXMLSuite;
 
 
 import io.restassured.RestAssured;
@@ -11,6 +11,7 @@ import org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.given;
 
 public class ValidateXML_POST {
+
 
     @BeforeClass
     public void setup()
