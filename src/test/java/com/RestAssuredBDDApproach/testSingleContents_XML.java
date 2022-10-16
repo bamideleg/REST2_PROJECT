@@ -36,4 +36,17 @@ public class testSingleContents_XML {
                 log().all();
 
     }
+    @Test
+    void TC03_testSingleContent3 () {
+
+        given().
+                get("https://reqres.in/api/users/9").
+                then().statusCode(200).
+                body("data.id",equalTo(9)).
+                body("data.email",equalTo("tobias.funke@reqres.in")).
+                body("data.first_name",equalTo("Tobias")).
+                body("data.last_name",equalTo("Funke")).
+                log().all();
+
+    }
 }
