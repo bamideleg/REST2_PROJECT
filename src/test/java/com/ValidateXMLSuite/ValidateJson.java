@@ -52,7 +52,7 @@ public class ValidateJson {
 //        Assert.assertEquals(response.contentType(), "application/json");
         Assert.assertEquals(response.contentType(), "application/xml");
 
-        response.then().body("category.id", equalTo(0))
+        response.then().body("category.id", equalTo(107))
                 .body("category.name", equalTo("PetCat"))
                 .body("name", equalTo("Cat"))
                 .body("tags[0].id", equalTo(0))
