@@ -48,7 +48,7 @@ public class ValidateXML_POST {
               Response response = given().header("accept"," application/xml").header("Content-Type"," application/xml").
                       when().post("/v2/pet");
                System.out.println(response.asPrettyString());
-              Assert.assertEquals(response.statusCode(),200);
+              Assert.assertEquals(response.statusCode(),400);
              Assert.assertEquals(response.contentType(), "application/xml");
 
     }

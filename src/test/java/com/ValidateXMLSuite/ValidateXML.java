@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ValidateXML {
 
@@ -21,18 +22,14 @@ public class ValidateXML {
 
         Response response = given().header("accept"," application/xml").
                 when().get("v2/pet/findByStatus?status=pending");
- //               then().statusCode().log().all();
+//                .then().statusCode().log().all();
 //                 System.out.println(response.asString());
-//                             or,
-                  System.out.println(response.prettyPrint());
+//                            or,
+                   System.out.println(response.prettyPrint());
                    Assert.assertEquals(response.statusCode(), 200);
                    Assert.assertEquals(response.contentType(), "application/xml");
 
-
-
-
-
-
-
+                   response.then().body("id", equalTo("789789"))
+                   .body("name", equalTo("doggie"));
     }
 }

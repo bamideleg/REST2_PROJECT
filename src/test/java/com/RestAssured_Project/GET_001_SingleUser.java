@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.hasItems;
 @Test
     public class GET_001_SingleUser {
 
+
         public void test_GET_Single_User () {
 
             given().
@@ -22,6 +23,8 @@ import static org.hamcrest.Matchers.hasItems;
                     body("data.email",equalTo("janet.weaver@reqres.in")).
 
            log().all();
+
+
 
         }
 

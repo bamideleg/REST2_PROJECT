@@ -70,8 +70,8 @@ public class ValidateJSON_POST_ParamRgres {
             Assert.assertEquals(response.statusCode(), 400);
             Assert.assertEquals(response.contentType(), "text/html; charset=utf-8");
 
-        response.then().body("data.name", equalTo("morpheus"))
-                .body("data.job", equalTo("leader"));
+//        response.then().body("data.name", equalTo("morpheus"));
+ //               .body("data.job", equalTo("QA leader"));
 
     }
 }
